@@ -3,15 +3,11 @@ from .models import Company
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django import forms
 
 
+# PASSWORD RESET FORM
 class PasswordResetRequestForm(forms.Form):
-    email_or_username = forms.CharField(label=("Username"), max_length=254)
-
-
-
-
+    email_or_username = forms.CharField(label=("Email Or Username"), max_length=254)
 
 class SetPasswordForm(forms.Form):
     """
@@ -38,19 +34,21 @@ class SetPasswordForm(forms.Form):
         return password2
 
 
+
+
+
+
 #   FOR APPLICANT PROFILE
 class SignUpForm(UserCreationForm):
     Options = (('0', 'Applicant'),
                ('1', 'Company'),)
-    first_name = forms.ChoiceField(choices=Options, required=True, label="Type of User")
+    first_name = forms.ChoiceField(choices=Options, required=True, label="Sign up as")
     email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
 
     class Meta:
         model = User
         fields = ('first_name', 'username', 'email', 'password1', 'password2', )
-        labels = {
-            'first_name': 'Type of User',
-        }
+
 
 
 # For Company Profile
@@ -70,13 +68,11 @@ CATEGORIES = (
 
 class SecondaryEducationForm(forms.ModelForm):
     gender = forms.ChoiceField(choices=CATEGORIES, required=True)
-    dob = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'}))
-    duration = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'in months'}))
-    duration2 = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder': 'in months'}))
 
     class Meta:
         model = Education
-        widgets = {'description_p': forms.Textarea(attrs={'size': 1000}), 'skills': forms.Textarea(attrs={'size': 1000})}
+        widgets = {'description_p': forms.Textarea(attrs={'size': 1000}),
+                   'skills': forms.Textarea(attrs={'size': 1000}), 'dob': forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'}), 'duration': forms.TextInput(attrs={'placeholder': 'in months'}),'duration': forms.TextInput(attrs={'placeholder': 'in months'})}
         fields = ('name', 'homeadd', 'dob', 'contact','gender', 'yoc1', 'board1', 'percentage1', 'yoc2', 'board2', 'percentage2',
                   'yoc3', 'percentage3','college','course',
                   'company_i', 'duration', 'profile_i', 'company_i2', 'duration2', 'profile_i2',

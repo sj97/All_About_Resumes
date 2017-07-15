@@ -34,14 +34,14 @@
                 <div class="col-xs-6 col-centered center-block">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-
+                                <p>The fields marked (<strong style="color:red">*</strong>) are mandatory. </p>
                             <h2> <b>Personal Details </b></h2>
                                 <div id="personal" class="panel-body ">
-                                    <label>Name : </label><p> {{form.name}} {{form.name.errors}} </p>
-                                    <label>Address :</label><p> {{form.homeadd}} {{form.homeadd.errors}}</p>
-                                    <label>Date of Birth :</label><p>{{form.dob}} {{form.dob.errors}} </p>
-                                    <label>Contact : </label><p>{{form.contact}} {{form.contact.errors}} </p>
-                                    <label>Gender : </label> <p>{{form.gender}} {{form.gender.errors}} </p>
+                                    <label>Name <strong style="color:red">*</strong> : </label><p> {{form.name}} {{form.name.errors}} </p>
+                                    <label>Address <strong style="color:red">*</strong> :</label><p> {{form.homeadd}} {{form.homeadd.errors}}</p>
+                                    <label>Date of Birth <strong style="color:red">*</strong> :</label><p>{{form.dob}} {{form.dob.errors}} </p>
+                                    <label>Contact <strong style="color:red">*</strong>: </label><p>{{form.contact}} {{form.contact.errors}} </p>
+                                    <label>Gender <strong style="color:red">*</strong>: </label> <p>{{form.gender}} {{form.gender.errors}} </p>
                                 </div>
                         </div>
                     </div>
@@ -55,15 +55,15 @@
                                 <div id="education"  class="panel-body ">
                                 <h3>Secondary Education</h3><br/>
 
-                                    <label>Year of Completion :</label><p> {{form.yoc1}}{{form.yoc1.errors}} </p>
-                                    <label>Board : </label><p>{{form.board1}} {{form.board1.errors}} </p>
-                                    <label>Percentage/CGPA Obtained : </label><p>{{form.percentage1}} {{form.percentage1.errors}}</p>
+                                    <label>Year of Completion <strong style="color:red">*</strong>:</label><p> {{form.yoc1}}{{form.yoc1.errors}} </p>
+                                    <label>Board <strong style="color:red">*</strong>: </label><p>{{form.board1}} {{form.board1.errors}} </p>
+                                    <label>Percentage/CGPA Obtained <strong style="color:red">*</strong>: </label><p>{{form.percentage1}} {{form.percentage1.errors}}</p>
 
                                     <br/>
                                 <h3>Senior Secondary Education</h3><br/>
-                                    <label>Year of Completion :  </label><p>      {{form.yoc2}} {{form.yoc2.errors}} </p>
-                                    <label>Board :               </label><p>   {{form.board2}} {{form.board2.errors}} </p>
-                                    <label>Percentage:           </label><p>      {{form.percentage2}} {{form.percentage2.errors}}</p>
+                                    <label>Year of Completion <strong style="color:red">*</strong>:  </label><p>      {{form.yoc2}} {{form.yoc2.errors}} </p>
+                                    <label>Board <strong style="color:red">*</strong>:               </label><p>   {{form.board2}} {{form.board2.errors}} </p>
+                                    <label>Percentage <strong style="color:red">*</strong>:           </label><p>      {{form.percentage2}} {{form.percentage2.errors}}</p>
 
 
                                 <h3>Graduation </h3> <br/>
@@ -112,8 +112,8 @@
 
                                 <div id="others"  class="panel-body ">
 
-                                    <label>   Skills :          </label><p>     {{form.skills}} {{form.skills.errors}} </p>
-                                    <label>  Post applying for :</label><p>   {{form.work}} {{form.work.errors}} </p>
+                                    <label>   Skills <strong style="color:red">*</strong>:          </label><p>     {{form.skills}} {{form.skills.errors}} </p>
+                                    <label>  Post applying for <strong style="color:red">*</strong>:</label><p>   {{form.work}} {{form.work.errors}} </p>
                                     <label>  Github link :      </label><p>   {{form.git_hub}} {{form.git_hub.errors}} </p>
                                   <label>  LinkedIn Link :    </label><p>   {{form.linked_in}} {{form.linked_in.errors}} </p>
 
